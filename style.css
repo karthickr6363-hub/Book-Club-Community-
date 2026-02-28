@@ -2086,6 +2086,36 @@ img.post-image {
   margin: auto;
 }
 
+#client-holder .logo-wrap .grid {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: nowrap;
+}
+
+#client-holder .logo-wrap .logo-item {
+  flex: 1;
+  text-align: center;
+}
+
+@media screen and (max-width: 768px) {
+  #client-holder .logo-wrap .grid {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  #client-holder .logo-wrap .logo-item {
+    flex: 0 0 calc(33.333% - 20px);
+    margin: 10px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  #client-holder .logo-wrap .logo-item {
+    flex: 0 0 calc(50% - 20px);
+  }
+}
+
 /*----- Featured Books Section
 --------------------------------------------------------------*/
 
@@ -2700,10 +2730,28 @@ footer#footer {
     display: none !important;
   }
 
+  #navbar {
+    display: flex;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+  }
+
+  .stellarnav {
+    display: flex;
+    align-items: center;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
   /* StellarNav Toggle Styling */
   .stellarnav .menu-toggle {
-    display: inline-block;
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
     padding: 10px 15px;
+    margin: 0 !important;
     background: transparent;
     color: var(--dark-color);
     position: relative;
