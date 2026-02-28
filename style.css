@@ -1822,55 +1822,22 @@ img.post-image {
   text-decoration: none;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1024px) {
   .action-menu .search-bar {
     margin-top: 20px;
     width: 100%;
   }
 
-  /* Keep menu bar in right corner on mobile/tablet */
+  /* Keep navigation toggle in right corner */
+  #header #navbar {
+    display: flex;
+    justify-content: flex-end;
+  }
+
   #header .stellarnav {
-    text-align: right !important;
-  }
-
-  #header .stellarnav ul {
-    text-align: right !important;
-  }
-
-  #header .stellarnav>ul>li {
-    display: inline-block !important;
-    text-align: right !important;
-  }
-
-  #header .stellarnav .menu-list {
-    text-align: right !important;
-    justify-content: flex-end !important;
-  }
-
-  #header .stellarnav .menu-item {
-    text-align: right !important;
-  }
-}
-
-@media screen and (max-width: 992px) and (min-width: 769px) {
-
-  /* Tablet view - keep menu in right corner */
-  #header .stellarnav {
-    text-align: right !important;
-  }
-
-  #header .stellarnav ul {
-    text-align: right !important;
-  }
-
-  #header .stellarnav>ul>li {
-    display: inline-block !important;
-    text-align: right !important;
-  }
-
-  #header .stellarnav .menu-list {
-    text-align: right !important;
-    justify-content: flex-end !important;
+    width: auto;
+    position: relative;
+    display: inline-block;
   }
 }
 
@@ -2363,7 +2330,7 @@ span.prev-price {
 
 /*----- Latest Blog Section
 --------------------------------------------------------------*/
-#latest-blog {}
+
 
 #latest-blog article.column {
   margin-bottom: 60px;
@@ -2727,29 +2694,29 @@ footer#footer {
   justify-content: flex-end;
 }
 
-/* Tablet View Hamburger Menu - 1024px */
+/* Responsive Navigation - 1024px Breakpoint */
 @media screen and (max-width: 1024px) {
-
-  /* Hide manual hamburger and rely on stellarnav */
   .hamburger {
     display: none !important;
   }
 
-  /* Show stellarNav hamburger toggle */
+  /* StellarNav Toggle Styling */
   .stellarnav .menu-toggle {
-    display: inline-block !important;
+    display: inline-block;
     padding: 10px 15px;
+    background: transparent;
+    color: var(--dark-color);
+    position: relative;
+    z-index: 1001;
+    /* Above the menu list to ensure click target */
   }
 
-  /* Hide main menu items */
-  .stellarnav>ul,
-  .stellarnav.desktop>ul {
-    display: none !important;
+  .stellarnav.light .menu-toggle span.bars span {
+    background: var(--dark-color);
   }
 
-  /* When menu is open, show items vertically */
+  /* Mobile Menu Container when active */
   .stellarnav.mobile.active>ul {
-    display: block !important;
     position: absolute;
     top: 100%;
     left: 0;
@@ -2759,21 +2726,24 @@ footer#footer {
     z-index: 1000;
     max-height: 80vh;
     overflow-y: auto;
+    text-align: left;
   }
 
   .stellarnav.mobile>ul>li {
     display: block !important;
     width: 100%;
+    text-align: left !important;
     border-bottom: 1px solid #eee;
   }
 
   .stellarnav.mobile>ul>li>a {
     display: block;
     padding: 15px 20px !important;
-    text-align: left;
+    text-align: left !important;
     border: none;
     font-size: 16px;
     color: var(--dark-text-color);
+    text-transform: none;
   }
 
   .stellarnav.mobile>ul>li>a:hover {
@@ -2781,68 +2751,31 @@ footer#footer {
     color: var(--accent-color);
   }
 
-  /* Sign up button styling in mobile menu */
+  /* Sign up button in mobile menu */
   .stellarnav.mobile>ul>li.signup-btn {
+    margin: 10px 20px;
     background: var(--accent-color);
+    border-radius: 4px;
+    width: calc(100% - 40px);
   }
 
   .stellarnav.mobile>ul>li.signup-btn a {
     color: white !important;
     font-weight: 600;
-  }
-
-  .stellarnav.mobile>ul>li.signup-btn a:hover {
-    background: var(--dark-color) !important;
+    text-align: center !important;
+    padding: 12px !important;
   }
 }
 
-/* Mobile View Hamburger Menu - 768px and below */
+/* Specific Mobile Fixes - 768px and below */
 @media screen and (max-width: 768px) {
   .stellarnav.mobile.active>ul {
-    display: block !important;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    right: 0;
-    background: white;
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
-    z-index: 1000;
     max-height: 70vh;
-    overflow-y: auto;
-  }
-
-  .stellarnav.mobile>ul>li {
-    display: block !important;
-    width: 100%;
-    border-bottom: 1px solid #eee;
   }
 
   .stellarnav.mobile>ul>li>a {
-    display: block;
     padding: 12px 15px !important;
-    text-align: left;
-    border: none;
-    font-size: 14px;
-    color: var(--dark-text-color);
-  }
-
-  .stellarnav.mobile>ul>li>a:hover {
-    background: #f8f9fa;
-    color: var(--accent-color);
-  }
-
-  /* Sign up button styling in mobile menu */
-  .stellarnav.mobile>ul>li.signup-btn {
-    background: var(--accent-color);
-  }
-
-  .stellarnav.mobile>ul>li.signup-btn a {
-    color: white !important;
-    font-weight: 600;
-  }
-
-  .stellarnav.mobile>ul>li.signup-btn a:hover {
-    background: var(--dark-color) !important;
+    font-size: 15px;
   }
 }
 
