@@ -1827,6 +1827,9 @@ img.post-image {
     margin-top: 20px;
     width: 100%;
   }
+}
+
+@media screen and (min-width: 992px) and (max-width: 1024px) {
 
   /* Keep navigation toggle in right corner */
   #header #navbar {
@@ -1865,6 +1868,60 @@ img.post-image {
   padding: 0;
 }
 
+@media screen and (min-width: 992px) {
+  #header .stellarnav>ul {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+}
+
+@media screen and (max-width: 991px) {
+
+  /* Force mobile menu to be absolute, full width, left aligned, breaking out of the 50% width col */
+  .stellarnav.mobile>ul {
+    position: absolute !important;
+    top: 100%;
+    left: 0 !important;
+    right: 0 !important;
+    width: 100% !important;
+    background: #f3f2ec !important;
+    /* Match header color or use var(--light-color) */
+    z-index: 1050 !important;
+    text-align: center !important;
+    padding: 20px 0 !important;
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.05);
+  }
+
+  .stellarnav.mobile>ul>li {
+    display: block !important;
+  }
+
+  .stellarnav.mobile>ul>li>a {
+    color: var(--dark-color) !important;
+    padding: 12px 15px !important;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05) !important;
+  }
+
+  #header {
+    position: relative;
+    /* Make header the positioning context */
+  }
+
+  #header .row>div {
+    position: static;
+    /* Prevent Bootstrap columns from trapping the absolute menu */
+  }
+
+  #header .stellarnav {
+    position: static;
+    /* Let the absolute child position relative to the nearest positioned ancestor (the header or row) */
+  }
+}
+
 #header .stellarnav>ul>li {
   padding-left: 8px;
   padding-right: 8px;
@@ -1879,7 +1936,8 @@ img.post-image {
 }
 
 #header .stellarnav>ul>li.signup-btn>a {
-  padding: 10px 20px !important;
+  margin: 0 !important;
+  padding: 8px 20px !important;
   background: var(--accent-color) !important;
   color: white !important;
   border-radius: 4px;
@@ -2061,9 +2119,7 @@ img.post-image {
 
   .main-slider .banner-content {
     width: 100%;
-    margin-top: 60px;
-    margin-right: 0;
-    margin-bottom: 80px;
+    margin: 60px auto 80px auto;
   }
 
   #billboard .slick-dots {
@@ -2855,6 +2911,10 @@ footer#footer {
     font-size: 14px;
   }
 
+  #header .stellarnav>ul>li.signup-btn>a {
+    padding: 6px 15px !important;
+  }
+
   /* Banner content fixes */
   .banner-content h2.banner-title {
     font-size: 2.5em !important;
@@ -2878,15 +2938,16 @@ footer#footer {
 @media screen and (max-width: 1200px) {
 
   /* Prevent content overflow */
+  html,
   body {
     overflow-x: hidden;
   }
 
-  /* Container fixes */
+  /* Container fixes removed: use default bootstrap 15px to prevent negative row margins from overflowing */
   .container {
-    padding-left: 10px;
-    padding-right: 10px;
     max-width: 100%;
+    padding-left: 15px;
+    padding-right: 15px;
   }
 
   /* Header mobile fixes */
@@ -2898,6 +2959,10 @@ footer#footer {
   #header .stellarnav>ul>li>a {
     padding: 4px 6px;
     font-size: 12px;
+  }
+
+  #header .stellarnav>ul>li.signup-btn>a {
+    padding: 4px 10px !important;
   }
 
   /* Banner mobile fixes */
@@ -2963,10 +3028,10 @@ footer#footer {
 
 @media screen and (max-width: 576px) {
 
-  /* Extra small mobile fixes */
+  /* Extra small mobile fixes removed for container to prevent grid overflow */
   .container {
-    padding-left: 5px;
-    padding-right: 5px;
+    padding-left: 15px;
+    padding-right: 15px;
   }
 
   /* Banner extra small fixes */
@@ -3167,5 +3232,100 @@ footer#footer {
   .logo-item {
     flex: 0 0 100%;
     /* 1 item per row */
+  }
+}
+
+/*--------------------------------------------------------------
+/** HOME 2 - Custom Sections
+--------------------------------------------------------------*/
+.bg-light-gray {
+  background-color: #f8f9fa;
+}
+
+.bg-light-beige {
+  background-color: #fcfaf5;
+}
+
+.text-accent {
+  color: var(--accent-color) !important;
+}
+
+.tracking-widest {
+  letter-spacing: 0.2rem;
+}
+
+#hero-v2 .display-3 {
+  color: var(--dark-color);
+  line-height: 1.2;
+}
+
+#hero-v2 .btn-wrap {
+  display: flex;
+  gap: 15px;
+}
+
+#hero-v2 .hero-image-wrap img {
+  box-shadow: 20px 20px 0px rgba(197, 169, 146, 0.2);
+}
+
+#about-club .features-list i {
+  margin-top: 4px;
+}
+
+#new-arrivals .product-item {
+  transition: transform 0.3s ease;
+}
+
+#new-arrivals .product-item:hover {
+  transform: translateY(-5px);
+}
+
+#new-arrivals .product-style {
+  background: #fff;
+  border: 1px solid #eee;
+  padding: 0px;
+}
+
+#new-arrivals .product-style button.add-to-cart {
+  opacity: 0;
+  transition: all 0.3s ease;
+  transform: translateY(10px);
+}
+
+#new-arrivals .product-style:hover button.add-to-cart {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+#events .badge {
+  padding: 8px 12px;
+  border-radius: 0;
+  font-weight: 500;
+  letter-spacing: 1px;
+}
+
+#events .bg-accent {
+  background-color: var(--accent-color) !important;
+}
+
+.newsletter-wrap form .form-control {
+  margin-bottom: 0;
+}
+
+#testimonials .italic {
+  font-style: italic;
+  font-family: var(--secondary-font);
+}
+
+@media only screen and (max-width: 991px) {
+  #hero-v2 {
+    text-align: center;
+  }
+
+  #hero-v2 .btn-wrap {
+    justify-content: center;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
   }
 }

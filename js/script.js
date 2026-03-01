@@ -114,8 +114,7 @@
     jQuery('.stellarnav').stellarNav({
       theme: 'plain',
       closingDelay: 250,
-      breakpoint: 1024,
-      // mobileMode: false,
+      breakpoint: 991,
     });
 
 
