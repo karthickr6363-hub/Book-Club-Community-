@@ -47,6 +47,13 @@ Version: 1.1
   --secondary-font: "Playfair Display", Georgia, serif;
 }
 
+/* Global Overflow Prevention */
+html,
+body {
+  overflow-x: hidden;
+  width: 100%;
+}
+
 /* Bootstrap variables */
 :root,
 [data-bs-theme=light] {
@@ -1822,27 +1829,14 @@ img.post-image {
   text-decoration: none;
 }
 
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 991px) {
   .action-menu .search-bar {
     margin-top: 20px;
     width: 100%;
   }
 }
 
-@media screen and (min-width: 992px) and (max-width: 1024px) {
-
-  /* Keep navigation toggle in right corner */
-  #header #navbar {
-    display: flex;
-    justify-content: flex-end;
-  }
-
-  #header .stellarnav {
-    width: auto;
-    position: relative;
-    display: inline-block;
-  }
-}
+/* Navigation toggle handles its own positioning via stellarNav */
 
 /* - Main Navigation
 ------------------------------------------------------------- */
@@ -1932,7 +1926,7 @@ img.post-image {
 }
 
 #header .stellarnav>ul>li.signup-btn {
-  margin-left: 15px;
+  margin-left: 8px;
 }
 
 #header .stellarnav>ul>li.signup-btn>a {
@@ -2306,10 +2300,6 @@ img.books-image {
   z-index: -1;
 }
 
-#special-offer .section-title {
-  width: 70%;
-  margin: 0 auto;
-}
 
 span.prev-price {
   color: #999;
@@ -2781,7 +2771,7 @@ footer#footer {
 }
 
 /* Responsive Navigation - 1024px Breakpoint */
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 991px) {
   .hamburger {
     display: none !important;
   }
@@ -2902,12 +2892,12 @@ footer#footer {
 
   /* Header fixes */
   #header .stellarnav>ul>li {
-    padding-left: 5px;
-    padding-right: 5px;
+    padding-left: 2px;
+    padding-right: 2px;
   }
 
   #header .stellarnav>ul>li>a {
-    padding: 6px 8px;
+    padding: 6px 5px;
     font-size: 14px;
   }
 
@@ -3304,7 +3294,7 @@ footer#footer {
   letter-spacing: 1px;
 }
 
-#events .bg-accent {
+.bg-accent {
   background-color: var(--accent-color) !important;
 }
 
@@ -3328,4 +3318,21 @@ footer#footer {
     flex-wrap: wrap;
     gap: 15px;
   }
+}
+
+/* Global Text Visibility Fix */
+.text-secondary {
+  color: #757575 !important;
+}
+
+#popular-books .section-title,
+#popular-books h4,
+#about-club .section-title,
+#testimonials .section-title,
+#special-offer .section-title,
+#special-offer h3,
+#download-app .section-title,
+.newsletter-wrap h2,
+.newsletter-wrap p {
+  color: #2f2f2f !important;
 }
