@@ -2002,9 +2002,13 @@ img.post-image {
   color: white;
 }
 
-/*----- Billboard
+/*----- Home Section
 --------------------------------------------------------------*/
-#billboard .main-slider {
+#home {
+  position: relative;
+}
+
+#home .main-slider {
   padding: 80px 0;
 }
 
@@ -2048,14 +2052,14 @@ img.post-image {
   display: block;
 }
 
-#billboard .slick-dots {
+#home .slick-dots {
   left: 200px;
   bottom: 110px;
   width: 10%;
   text-align: inherit;
 }
 
-#billboard button.slick-arrow {
+#home button.slick-arrow {
   background: transparent;
   border: 1px solid #E5E3DA;
   padding: initial;
@@ -2068,29 +2072,29 @@ img.post-image {
   cursor: pointer;
 }
 
-#billboard button.slick-arrow:hover {
+#home button.slick-arrow:hover {
   border: 1px solid #74642F;
   background-color: #E5E3DA;
 }
 
-#billboard button.prev.slick-arrow {
+#home button.prev.slick-arrow {
   left: 110px;
 }
 
-#billboard button.next.slick-arrow {
+#home button.next.slick-arrow {
   right: 110px;
 }
 
-#billboard .slick-arrow i.icon {
+#home .slick-arrow i.icon {
   color: #8C8C8C;
 }
 
 @media screen and (max-width: 1366px) {
-  #billboard button.prev.slick-arrow {
+  #home button.prev.slick-arrow {
     left: 0;
   }
 
-  #billboard button.next.slick-arrow {
+  #home button.next.slick-arrow {
     right: 0;
   }
 }
@@ -2100,7 +2104,7 @@ img.post-image {
     font-size: 3.5em;
   }
 
-  #billboard .main-slider {
+  #home .main-slider {
     margin: 70px 0;
     padding: 0;
   }
@@ -2116,7 +2120,7 @@ img.post-image {
     margin: 60px auto 80px auto;
   }
 
-  #billboard .slick-dots {
+  #home .slick-dots {
     left: 0;
     bottom: 0;
     width: 100%;
